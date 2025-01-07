@@ -1,7 +1,13 @@
 import { defineConfig } from "@rsbuild/core";
 import { pluginReact } from "@rsbuild/plugin-react";
-import { pluginTailwindCSS } from "rsbuild-plugin-tailwindcss";
+// import { pluginTailwindCSS } from "rsbuild-plugin-tailwindcss";
+import { TanStackRouterRspack } from "@tanstack/router-plugin/rspack";
 
 export default defineConfig({
-  plugins: [pluginReact(), pluginTailwindCSS()],
+  plugins: [pluginReact()],
+  tools: {
+    rspack: {
+      plugins: [TanStackRouterRspack()],
+    },
+  },
 });
